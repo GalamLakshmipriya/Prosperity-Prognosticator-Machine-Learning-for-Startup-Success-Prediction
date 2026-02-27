@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .result-card {
+            background: #2c3e50;
+            padding: 40px;
+            width: 350px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+            border: 2px solid rgba(0, 255, 255, 0.4);
+        }
+
+        .result-card h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .status {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .success {
+            color: #00ff99;
+        }
+
+        .failure {
+            color: #ff4d4d;
+        }
+
+        .description {
+            font-size: 14px;
+            margin-bottom: 25px;
+            color: #dcdcdc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-card">
+    <h1>Startup Analysis Result</h1> 
+    {% if prediction == 1 %}
+        <div class="status success">✅ Accquired </div>
+        <div class="description">
+            This startup shows strong indicators of future success.
+        </div>
+    {% else %}
+        <div class="status failure">❌ Closed </div>
+        <div class="description">
+            This startup may face significant growth challenges.
+        </div>
+    {% endif %}
+    <br><br>
+    <a href="/" class="btn">Analyze Another Startup</a>
+</div>
+
+
+</body>
+</html>

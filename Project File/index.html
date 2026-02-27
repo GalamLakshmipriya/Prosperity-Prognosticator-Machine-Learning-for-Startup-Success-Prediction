@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Success Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <body>
+
+<div class="main-wrapper">
+    <div class="card">
+
+        <h2>Startup Success Predictor</h2>
+
+        <form action="/predict" method="post">
+
+            <div class="input-group">
+                <label>Funding Rounds</label>
+                <input type="number" name="funding_rounds" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Total Funding (USD)</label>
+                <input type="number" name="funding_total_usd" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Milestones</label>
+                <input type="number" name="milestones" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Relationships</label>
+                <input type="number" name="relationships" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Average Participants</label>
+                <input type="number" name="avg_participants" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Age at First Funding (Years)</label>
+                <input type="number" name="age_first_funding_year" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Age at Last Funding (Years)</label>
+                <input type="number" name="age_last_funding_year" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Age at First Milestone (Years)</label>
+                <input type="number" name="age_first_milestone_year" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Age at Last Milestone (Years)</label>
+                <input type="number" name="age_last_milestone_year" step="any" required>
+            </div>
+
+            <div class="input-group">
+                <label>Is Top 500 Company? (1 = Yes, 0 = No)</label>
+                <input type="number" name="is_top500" min="0" max="1" required>
+            </div>
+
+            <button type="submit">Predict Success</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
